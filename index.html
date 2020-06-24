@@ -6,10 +6,7 @@
 	 url[1]="http://www.csdn.net";
 	 url[2]="http://bbs.voc.com.cn";
 	 var ints=parseInt(Math.random()*(url.length));
-	 window.open(url[ints]);//本窗口打开	 
-	 //window.location=url[ints];//新窗口打开 
+	 window.location.href = url[ints];
 	}
-
+test();
  </script>
-
-<a href="javascript:test()">test</a>
