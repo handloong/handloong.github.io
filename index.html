@@ -1,19 +1,15 @@
-<script>
-function browserRedirect() {
-    var sUserAgent = navigator.userAgent.toLowerCase();
-    var bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
-    var bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
-    var bIsMidp = sUserAgent.match(/midp/i) == "midp";
-    var bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
-    var bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
-    var bIsAndroid = sUserAgent.match(/android/i) == "android";
-    var bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
-    var bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
-    if (!(bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) ){
-        window.location.href="http://tp.javajhtzlq.xyz/app/index.php?statistics=ab45be204254aef2aabe0cbe2be9ab82&c=entry&do=index&m=xiaof_toupiao&i=3&sid=23657&wxref=mp.weixin.qq.com&from=singlemessage";
-    } else {
-        window.location.href="http://tp.javajhtzlq.xyz/app/index.php?statistics=ab45be204254aef2aabe0cbe2be9ab82&c=entry&do=index&m=xiaof_toupiao&i=3&sid=23657&wxref=mp.weixin.qq.com&from=singlemessage";
-    }
-}
-browserRedirect();
-</script>
+
+ <script language="javascript">
+   function test(){
+	 var url=new Array();
+	 url[0]="http://www.baidu.com";
+	 url[1]="http://www.csdn.net";
+	 url[2]="http://bbs.voc.com.cn";
+	 var ints=parseInt(Math.random()*(url.length));
+	 window.open(url[ints]);//本窗口打开	 
+	 //window.location=url[ints];//新窗口打开 
+	}
+
+ </script>
+
+<a href="javascript:test()">test</a>
