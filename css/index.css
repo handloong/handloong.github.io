@@ -10,11 +10,11 @@ body { font-size: 12px; background: #226039 url(../images/bg.jpg) center 0 scrol
 header { width: 100%; margin: auto; border-bottom: #3c7a48 1px solid }
 .quotes { width: 1000px; position: relative; margin: 60px auto 120px auto; }
 .quotes p { text-shadow: #246640 1px 1px 1px; color: #fff; width: 330px; line-height: 26px; }
-.text5 { position: absolute; left: 0px; top: 160px; font-family: "Î¢ÈíÑÅºÚ"; font-size: 30px; color: #FFF; -webkit-box-reflect: below -3px -webkit-gradient(linear, 0 0, 0 100%, from(transparent), to(white)); }/* belowÎÄ×Öµ¹Ó°·½ÏòÏòÏÂ£¬¾àÀë3px ÑÕÉ«½¥±äÓÉÉÏÍùÏÂ */
+.text5 { position: absolute; left: 0px; top: 160px; font-family: "å¾®è½¯é›…é»‘"; font-size: 30px; color: #FFF; -webkit-box-reflect: below -3px -webkit-gradient(linear, 0 0, 0 100%, from(transparent), to(white)); }/* belowæ–‡å­—å€’å½±æ–¹å‘å‘ä¸‹ï¼Œè·ç¦»3px é¢œè‰²æ¸å˜ç”±ä¸Šå¾€ä¸‹ */
 .flower { position: absolute; right: 0; top: 60px; background: url(../images/flower.png) no-repeat; width: 173px; height: 175px; z-index: 2 }
 .flower img { margin: 22px 0 0 17px; display: block; }
 /* nav */
-#nav { width: 100%; line-height: 50px; height: 50px; font-family: "Î¢ÈíÑÅºÚ"; font-size: 16px; background: rgba(56,134,72,.8); text-align: center; position: relative; border-bottom: #559765 1px solid }
+#nav { width: 100%; line-height: 50px; height: 50px; font-family: "å¾®è½¯é›…é»‘"; font-size: 16px; background: rgba(56,134,72,.8); text-align: center; position: relative; border-bottom: #559765 1px solid }
 #nav ul { width: 1000px; margin: auto; background: url(../images/heart.png) left no-repeat; overflow: hidden }
 #nav ul li { display: inline; margin: 0 12px; text-align: center; }
 #nav ul li a { color: #fff; }
@@ -32,7 +32,7 @@ header { width: 100%; margin: auto; border-bottom: #3c7a48 1px solid }
 .wall_a li:hover img { opacity: 0.4; }
 /* loading  */
 #fountainG { position: relative; width: 240px; height: 29px; }
-#fountainG li { position: absolute; top: 0;/* background: #238d7b; Ä¬ÈÏÑÕÉ« */ width: 29px; height: 29px; -moz-animation: bounce_fountainG 1.2s linear infinite; -moz-transform: scale(.3); -moz-border-radius: 19px; -webkit-animation: bounce_fountainG 1.2s linear infinite; -webkit-transform: scale(.3); -webkit-border-radius: 19px; -ms-animation: bounce_fountainG 1.2s linear infinite; -ms-transform: scale(.3); -ms-border-radius: 19px; -o-animation: bounce_fountainG 1.2s linear infinite; -o-transform: scale(.3); -o-border-radius: 19px; animation: bounce_fountainG 1.2s linear infinite; transform: scale(.3); border-radius: 19px; }
+#fountainG li { position: absolute; top: 0;/* background: #238d7b; é»˜è®¤é¢œè‰² */ width: 29px; height: 29px; -moz-animation: bounce_fountainG 1.2s linear infinite; -moz-transform: scale(.3); -moz-border-radius: 19px; -webkit-animation: bounce_fountainG 1.2s linear infinite; -webkit-transform: scale(.3); -webkit-border-radius: 19px; -ms-animation: bounce_fountainG 1.2s linear infinite; -ms-transform: scale(.3); -ms-border-radius: 19px; -o-animation: bounce_fountainG 1.2s linear infinite; -o-transform: scale(.3); -o-border-radius: 19px; animation: bounce_fountainG 1.2s linear infinite; transform: scale(.3); border-radius: 19px; }
 #fountainG li:first-child { left: 0; -moz-animation-delay: 0.48s; -webkit-animation-delay: 0.48s; -ms-animation-delay: 0.48s; -o-animation-delay: 0.48s; animation-delay: 0.48s; }
 #fountainG li:nth-child(2) { left: 30px; -moz-animation-delay: 0.6s; -webkit-animation-delay: 0.6s; -ms-animation-delay: 0.6s; -o-animation-delay: 0.6s; animation-delay: 0.6s; }
 #fountainG li:nth-child(3) { left: 60px; -moz-animation-delay: 0.72s; -webkit-animation-delay: 0.72s; -ms-animation-delay: 0.72s; -o-animation-delay: 0.72s; animation-delay: 0.72s; }
@@ -93,7 +93,7 @@ background-color:#FFFFFF;
 .about_girl, .about_boy { width: 100%; margin:10px auto 0; overflow: hidden }
 .about_girl span { float: left; margin-right: 30px }
 .about_girl p { margin: 20px; background: #559664; color: #FFF; float: left; padding: 20px; width: 46%; border-radius: 6px; position: relative; box-shadow: inset #226039 -1px -1px 1px; text-shadow: #226039 1px 1px 0px }
-.about_girl p::before { content: ""; width: 0px; height: 0px; border-style: solid; border-width: 20px 20px 20px 0; border-color: transparent #559664 transparent; position: absolute; left: -20px; top: 24px; }/* Èı½ÇĞÎ */
+.about_girl p::before { content: ""; width: 0px; height: 0px; border-style: solid; border-width: 20px 20px 20px 0; border-color: transparent #559664 transparent; position: absolute; left: -20px; top: 24px; }/* ä¸‰è§’å½¢ */
 .about_boy span { float: right; margin-left: 30px }
 .about_boy p { margin: 20px; background: #ececec; color: #444; float: right; padding: 20px; width: 46%; border-radius: 6px; position: relative; box-shadow: inset #999 1px -1px 1px; text-shadow: #fff 1px 1px 0px }
 .about_boy p::before { content: ""; width: 0px; height: 0px; border-style: solid; border-width: 20px 0 20px 20px; border-color: transparent #ececec transparent; position: absolute; right: -20px; top: 24px; }
@@ -105,7 +105,7 @@ background-color:#FFFFFF;
 .blog figure p a{color:#226039;}
 .blog figure figcaption{ padding:10px; line-height:22px; color:#666}
 /* hope */
-.text6 {font-family: "Î¢ÈíÑÅºÚ"; font-size: 30px; color: #FFF; -webkit-box-reflect: below 1px -webkit-gradient(linear, 0 0, 0 100%, from(transparent), to(white)); width:1000px; margin:auto  }
+.text6 {font-family: "å¾®è½¯é›…é»‘"; font-size: 30px; color: #FFF; -webkit-box-reflect: below 1px -webkit-gradient(linear, 0 0, 0 100%, from(transparent), to(white)); width:1000px; margin:auto  }
 .hope{ border-top:50px #559664 solid; padding:20px; color:#FFF }
 .hope ul{ width:1000px; margin:auto;background: url(../images/love.png) no-repeat left center; overflow:hidden}
 .visitors{ width:500px; float:right}
