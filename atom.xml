@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://doer.ltd</id>
+    <title>Doer Notes</title>
+    <updated>2025-11-11T00:40:09.683Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://doer.ltd"/>
+    <link rel="self" href="https://doer.ltd/atom.xml"/>
+    <subtitle>做则成 Code. Build. Grow.</subtitle>
+    <logo>https://doer.ltd/images/avatar.png</logo>
+    <icon>https://doer.ltd/favicon.ico</icon>
+    <rights>All rights reserved 2025, Doer Notes</rights>
+    <entry>
+        <title type="html"><![CDATA[提高代码团队质量]]></title>
+        <id>https://doer.ltd/post/ti-gao-dai-ma-tuan-dui-zhi-liang/</id>
+        <link href="https://doer.ltd/post/ti-gao-dai-ma-tuan-dui-zhi-liang/">
+        </link>
+        <updated>2025-11-05T00:45:13.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="git使用规范">Git使用规范</h2>
+<p>（1）所有代码必须上传至Git仓库,如有<code>破坏性</code>更新请先创建版本分支</p>
+<ul>
+<li>直接在 <code>master</code> 分支上修改并 push 破坏性代码 → 可能导致线上服务崩溃</li>
+<li>代码只写在本地，未提交到 Git → 团队无法协作</li>
+<li>删除旧 API 但未通知其他团队 → 调用方系统报错</li>
+</ul>
+<p>（2）分享给同事的代码需保证完整且可正常运行</p>
+<ul>
+<li>运行代码前先 <code>git pull</code>一下保证代码最新</li>
+<li>如果需要用到第三方dll且不提供nuget下载的情况下，需要把dll放在<code>sln</code>文件同级<code>Lib</code>文件夹重新引用(vs自动转换成相对路径)</li>
+<li>禁止使用绝对路径引用，例如 D:\Libs\xxx.dll (你电脑上有这个路径，人家有吗？)</li>
+</ul>
+<p>（3）重要节点必须创建分支或Tag标记<br>
+<img src="https://doer.ltd/post-images/1762308421754.png" alt="" loading="lazy"></p>
+<figure data-type="image" tabindex="1"><img src="https://doer.ltd/post-images/1762308449874.png" alt="" loading="lazy"></figure>
+<ul>
+<li>发布版本定义好版本号后打<code>Tag</code>并推送</li>
+<li>演示: <a href="http://10.32.36.122/FDC/eeproxy">http://10.32.36.122/FDC/eeproxy</a></li>
+</ul>
+<h2 id="版本管理要求">版本管理要求</h2>
+<ol>
+<li>
+<p>核心类必须包含版本概念，便于调试</p>
+<ul>
+<li><code>1.0.0.0</code> —— 传统四段式版本 : ios 16.x 17.x</li>
+<li><code>2025.1.0.1</code> —— 年份+序列号风格  vs2013,vs2022,vs2026,iso 26.1</li>
+</ul>
+</li>
+<li>
+<p>每发布一个版本必须创建Tag或分支<br>
+<img src="https://doer.ltd/post-images/1762306757920.png" alt="" loading="lazy"></p>
+</li>
+<li>
+<p>代码提交需规范记录新增、修改、修复内容</p>
+<ul>
+<li>fix: 类型 为 fix 的提交表示在代码库中修复了一个 bug</li>
+<li>feat: 类型 为 feat 的提交表示在代码库中新增了一个功能</li>
+<li>docs: 用于修改文档，例如修改 README 文件、API 文档等</li>
+<li>refactor: 用于重构代码，例如修改代码结构、变量名、函数名等但不修改功能逻辑</li>
+<li>perf: 用于优化性能，例如提升代码的性能、减少内存占用等</li>
+<li>build: 用于发布版本</li>
+</ul>
+</li>
+<li>
+<p>所有改动均需记录，特殊需求需备注需求人</p>
+</li>
+</ol>
+<h2 id="技术栈与编码规范">技术栈与编码规范</h2>
+<h3 id="第三方类库使用">第三方类库使用</h3>
+<ol>
+<li>直接使用官方包，尽量少修改原代码，如需要修改请clone到内网并发布到内网或者myget包<br>
+<img src="https://doer.ltd/post-images/1762306664906.png" alt="" loading="lazy"><br>
+<img src="https://doer.ltd/post-images/1762306710136.png" alt="" loading="lazy"></li>
+<li>可适当参与PR提升自身阅读代码能力 (黄老板发现的bug)<br>
+<img src="https://doer.ltd/post-images/1762306595423.png" alt="" loading="lazy"></li>
+</ol>
+<h3 id="数据库操作规范">数据库操作规范</h3>
+<ol>
+<li>非必要禁止在代码中出现SQL语句（复杂报表除外）<br>
+<img src="https://doer.ltd/post-images/1762307036934.png" alt="" loading="lazy"></li>
+</ol>
+<p>对比之前：<br>
+<img src="https://doer.ltd/post-images/1762307151386.png" alt="" loading="lazy"><br>
+<img src="https://doer.ltd/post-images/1762307201925.png" alt="" loading="lazy"><br>
+<img src="https://doer.ltd/post-images/1762307219513.png" alt="" loading="lazy"><br>
+之后：<br>
+<img src="https://doer.ltd/post-images/1762306976274.png" alt="" loading="lazy"></p>
+<ol start="2">
+<li>其他应用(客户端小软件/服务)对接本系统禁止直接操作数据库，统一使用WebAPI
+<ul>
+<li>有泄露连接串风险(即使代码加密只要在内存里连接串都可以dump出来)</li>
+<li>数据库密码变更影响大。</li>
+</ul>
+</li>
+<li>推荐使用FreeSQL/Sqlsugar/EF/Dapper等ORM操作数据库</li>
+<li>不推荐使用存储过程和原生SQL语句</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>对比维度</th>
+<th>存储过程（Stored Procedure）</th>
+<th>代码实现（Application Code）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>性能</strong></td>
+<td>✅ 通常更快：逻辑在数据库服务器执行，减少网络往返；预编译，执行计划可缓存。</td>
+<td>⚠️ 可能较慢：需多次数据库交互；但现代 ORM 和批处理可优化。</td>
+</tr>
+<tr>
+<td><strong>可维护性</strong></td>
+<td>⚠️ 较差：逻辑分散在 DB 层，版本控制困难；调试和测试工具链弱；团队协作成本高。</td>
+<td>✅ 更好：代码集中管理，支持 Git、单元测试、CI/CD 等现代开发实践。</td>
+</tr>
+<tr>
+<td><strong>可移植性与耦合</strong></td>
+<td>❌ 差：强依赖特定数据库（如 T-SQL、PL/pgSQL），迁移成本高；业务逻辑与数据层紧耦合。</td>
+<td>✅ 好：使用标准语言（如 C#、Java），配合 ORM 可轻松切换数据库；逻辑与数据解耦更清晰。</td>
+</tr>
+</tbody>
+</table>
+<ol start="5">
+<li>大多数情况下查询数据必须建立实体类，使用面向对象方式</li>
+<li>非必要不使用DataTable/DataRow，请改用实体或Record类</li>
+</ol>
+<h3 id="代码结构优化">代码结构优化</h3>
+<ol>
+<li>命名空间和项目名称需规范</li>
+<li>建立完整的文件夹结构，保持项目清晰</li>
+<li>代码超过2000行必须抽离为独立方法或文件，专有事件处理专有逻辑，减少代码冲突</li>
+<li>一个function 一般长度不超过两个屏幕</li>
+<li>适当使用设计模式<br>
+<img src="https://doer.ltd/post-images/1762308087853.png" alt="" loading="lazy"><br>
+<img src="https://doer.ltd/post-images/1762308833915.png" alt="" loading="lazy"><br>
+<img src="https://doer.ltd/post-images/1762308888791.png" alt="" loading="lazy"></li>
+</ol>
+<h3 id="异常捕获">异常捕获</h3>
+<p>1.更推荐使用全局异常拦截。<br>
+<img src="https://doer.ltd/post-images/1762740468949.png" alt="" loading="lazy"><br>
+2.事务处理不太好<br>
+<img src="https://doer.ltd/post-images/1762740610848.png" alt="" loading="lazy"><br>
+推荐：<br>
+<img src="https://doer.ltd/post-images/1762740816926.png" alt="" loading="lazy"></p>
+<h3 id="适当添加扩展方法">适当添加扩展方法</h3>
+<figure data-type="image" tabindex="2"><img src="https://doer.ltd/post-images/1762740995852.png" alt="" loading="lazy"></figure>
+<h3 id="适当封装-xxconfigservice类">适当封装 <code>xxConfigService</code>类</h3>
+<p><img src="https://doer.ltd/post-images/1762742842959.png" alt="" loading="lazy"><br>
+<img src="https://doer.ltd/post-images/1762741062079.png" alt="" loading="lazy"><br>
+<img src="https://doer.ltd/post-images/1762741100931.png" alt="" loading="lazy"><br>
+封装后：<br>
+<img src="https://doer.ltd/post-images/1762743027697.png" alt="" loading="lazy"></p>
+<h3 id="适当使用自动映射">适当使用自动映射</h3>
+<figure data-type="image" tabindex="3"><img src="https://doer.ltd/post-images/1762743191115.png" alt="" loading="lazy"></figure>
+<p><img src="https://doer.ltd/post-images/1762742348468.png" alt="" loading="lazy"><br>
+<img src="https://doer.ltd/post-images/1762742383642.png" alt="" loading="lazy"><br>
+<img src="https://doer.ltd/post-images/1762742525993.png" alt="" loading="lazy"></p>
+<h3 id="网站推荐">网站推荐</h3>
+<ol>
+<li><a href="https://github.com/">全球最大同性交友平台 https://github.com</a></li>
+<li><a href="https://www.conventionalcommits.org/zh-hans/v1.0.0/#faq">约定式提交</a></li>
+<li><a href="https://refactoringguru.cn/design-patterns">设计模式</a></li>
+</ol>
+<h3 id="培养解决异常问题能力">培养解决异常问题能力</h3>
+<ol>
+<li>问题的本质是期待的状况与现实状况的落差</li>
+<li>5WHY分析法</li>
+</ol>
+<h3 id="题外话">题外话</h3>
+<p>..</p>
+]]></content>
+    </entry>
+</feed>
